@@ -63,4 +63,20 @@ class ParT(AbstractModule):
         """
         Please implement your model evaluation here
         """
+        cfg = self.cfg
+        dataset = cfg.source
+        feature_type = cfg.feature_type
+
+        cwd = os.getcwd()
+        work_dir = f'{pydir.parent}/src'
+        os.chdir(work_dir)
+
+        code = f'bash {work_dir}/train_{dataset}.sh'  \
+                f' {self.model_name}' \
+                f' {feature_type}' 
+        os.system(code)
+
+        os.chdir(cwd)
+
+
         raise NotImplementedError(f'{self.name}.evaluate() is not implemented, plese check the api: "{self.__module__}"')

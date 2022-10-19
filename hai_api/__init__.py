@@ -1,7 +1,4 @@
 
-from sympy import im
-
-
 try:
     import hai
 except ImportError:
