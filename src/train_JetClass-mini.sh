@@ -22,7 +22,7 @@ else
     CMD="weaver"
 fi
 
-epochs=5
+epochs=3
 samples_per_epoch=$((100 * 1024 / $NGPUS))  # 10,240,000
 samples_per_epoch_val=$((100 * 128))  # 1,280,000
 dataopts="--num-workers 1 --fetch-step 0.01"
